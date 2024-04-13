@@ -30,13 +30,14 @@ namespace Proje_Hastane
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHastaDetay));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblAdSoyad = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTC = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lnkBilgiDuzenle = new System.Windows.Forms.LinkLabel();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.btnRandevuAl = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,12 +45,12 @@ namespace Proje_Hastane
             this.cmbDoktor = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbBrans = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lnkBilgiDuzenle = new System.Windows.Forms.LinkLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -126,16 +127,13 @@ namespace Proje_Hastane
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Randevu Paneli";
             // 
-            // lnkBilgiDuzenle
+            // txtID
             // 
-            this.lnkBilgiDuzenle.AutoSize = true;
-            this.lnkBilgiDuzenle.Location = new System.Drawing.Point(8, 430);
-            this.lnkBilgiDuzenle.Name = "lnkBilgiDuzenle";
-            this.lnkBilgiDuzenle.Size = new System.Drawing.Size(147, 23);
-            this.lnkBilgiDuzenle.TabIndex = 7;
-            this.lnkBilgiDuzenle.TabStop = true;
-            this.lnkBilgiDuzenle.Text = "Bilgilerini Duzenle";
-            this.lnkBilgiDuzenle.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkBilgiDuzenle_LinkClicked);
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(92, 20);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(179, 31);
+            this.txtID.TabIndex = 9;
             // 
             // btnRandevuAl
             // 
@@ -145,6 +143,7 @@ namespace Proje_Hastane
             this.btnRandevuAl.TabIndex = 5;
             this.btnRandevuAl.Text = "Randevu Al";
             this.btnRandevuAl.UseVisualStyleBackColor = true;
+            this.btnRandevuAl.Click += new System.EventHandler(this.btnRandevuAl_Click);
             // 
             // label7
             // 
@@ -199,6 +198,26 @@ namespace Proje_Hastane
             this.cmbBrans.TabIndex = 2;
             this.cmbBrans.SelectedIndexChanged += new System.EventHandler(this.cmbBrans_SelectedIndexChanged);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(53, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 23);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "ID:";
+            // 
+            // lnkBilgiDuzenle
+            // 
+            this.lnkBilgiDuzenle.AutoSize = true;
+            this.lnkBilgiDuzenle.Location = new System.Drawing.Point(8, 430);
+            this.lnkBilgiDuzenle.Name = "lnkBilgiDuzenle";
+            this.lnkBilgiDuzenle.Size = new System.Drawing.Size(147, 23);
+            this.lnkBilgiDuzenle.TabIndex = 7;
+            this.lnkBilgiDuzenle.TabStop = true;
+            this.lnkBilgiDuzenle.Text = "Bilgilerini Duzenle";
+            this.lnkBilgiDuzenle.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkBilgiDuzenle_LinkClicked);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
@@ -236,22 +255,7 @@ namespace Proje_Hastane
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(576, 201);
             this.dataGridView2.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 23);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "ID:";
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(92, 20);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(179, 31);
-            this.txtID.TabIndex = 9;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // contextMenuStrip1
             // 
@@ -262,6 +266,7 @@ namespace Proje_Hastane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(889, 462);
             this.Controls.Add(this.lnkBilgiDuzenle);
@@ -270,7 +275,9 @@ namespace Proje_Hastane
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
             this.Name = "FrmHastaDetay";
             this.Text = "Hasta Detay";
             this.Load += new System.EventHandler(this.FrmHastaDetay_Load);

@@ -1,7 +1,7 @@
 ﻿
 namespace Proje_Hastane
 {
-    partial class Duyurular
+    partial class FrmDuyurular
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Proje_Hastane
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Duyurular));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDuyurular));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +44,7 @@ namespace Proje_Hastane
             this.dataGridView1.Size = new System.Drawing.Size(763, 464);
             this.dataGridView1.TabIndex = 0;
             // 
-            // Duyurular
+            // FrmDuyurular
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -55,8 +55,8 @@ namespace Proje_Hastane
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
-            this.Name = "Duyurular";
-            this.Text = "FrmDuyurular";
+            this.Name = "FrmDuyurular";
+            this.Text = "Duyurular";
             this.Load += new System.EventHandler(this.FrmDuyurular_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

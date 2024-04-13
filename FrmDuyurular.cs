@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace Proje_Hastane
 {
-    public partial class Duyurular : Form
+    public partial class FrmDuyurular : Form
     {
-        public Duyurular()
+        public FrmDuyurular()
         {
             InitializeComponent();
         }

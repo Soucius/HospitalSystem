@@ -118,7 +118,7 @@ namespace Proje_Hastane
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Duyurular fr = new Duyurular();
+            FrmDuyurular fr = new FrmDuyurular();
             fr.Show();
         }
     }
