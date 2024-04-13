@@ -29,6 +29,7 @@ namespace Proje_Hastane
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDoktorPaneli));
             this.label1 = new System.Windows.Forms.Label();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.cmbBrans = new System.Windows.Forms.ComboBox();
@@ -68,7 +69,7 @@ namespace Proje_Hastane
             this.cmbBrans.Location = new System.Drawing.Point(73, 96);
             this.cmbBrans.Name = "cmbBrans";
             this.cmbBrans.Size = new System.Drawing.Size(147, 31);
-            this.cmbBrans.TabIndex = 2;
+            this.cmbBrans.TabIndex = 3;
             // 
             // label2
             // 
@@ -103,7 +104,7 @@ namespace Proje_Hastane
             this.mskTC.Mask = "00000000000";
             this.mskTC.Name = "mskTC";
             this.mskTC.Size = new System.Drawing.Size(147, 31);
-            this.mskTC.TabIndex = 7;
+            this.mskTC.TabIndex = 4;
             this.mskTC.ValidatingType = typeof(int);
             // 
             // label6
@@ -120,22 +121,23 @@ namespace Proje_Hastane
             this.txtSoyad.Location = new System.Drawing.Point(73, 59);
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(147, 31);
-            this.txtSoyad.TabIndex = 8;
+            this.txtSoyad.TabIndex = 2;
             // 
             // txtSifre
             // 
             this.txtSifre.Location = new System.Drawing.Point(73, 170);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(147, 31);
-            this.txtSifre.TabIndex = 10;
+            this.txtSifre.TabIndex = 5;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(238, 22);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(407, 261);
+            this.dataGridView1.Size = new System.Drawing.Size(622, 261);
             this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // btnEkle
             // 
@@ -146,6 +148,7 @@ namespace Proje_Hastane
             this.btnEkle.TabIndex = 12;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = false;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // btnSil
             // 
@@ -156,6 +159,7 @@ namespace Proje_Hastane
             this.btnSil.TabIndex = 13;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -166,12 +170,15 @@ namespace Proje_Hastane
             this.btnGuncelle.TabIndex = 14;
             this.btnGuncelle.Text = "Guncelle";
             this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // FrmDoktorPaneli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 296);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.ClientSize = new System.Drawing.Size(872, 296);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnEkle);
@@ -187,9 +194,12 @@ namespace Proje_Hastane
             this.Controls.Add(this.txtAd);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
             this.Name = "FrmDoktorPaneli";
-            this.Text = "FrmDoktorPaneli";
+            this.Text = "Doktor Paneli";
+            this.Load += new System.EventHandler(this.FrmDoktorPaneli_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
