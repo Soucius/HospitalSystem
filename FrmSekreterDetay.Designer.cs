@@ -29,6 +29,7 @@ namespace Proje_Hastane
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSekreterDetay));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblAdSoyad = new System.Windows.Forms.Label();
             this.lblTC = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@ namespace Proje_Hastane
             this.btnDuyuruOlustur = new System.Windows.Forms.Button();
             this.rchDuyuru = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.chkDurum = new System.Windows.Forms.CheckBox();
             this.mskTC = new System.Windows.Forms.MaskedTextBox();
@@ -61,6 +61,7 @@ namespace Proje_Hastane
             this.btnRandevuListe = new System.Windows.Forms.Button();
             this.btnBransPanel = new System.Windows.Forms.Button();
             this.btnDoktorPanel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -139,6 +140,7 @@ namespace Proje_Hastane
             this.btnDuyuruOlustur.TabIndex = 1;
             this.btnDuyuruOlustur.Text = "Olustur";
             this.btnDuyuruOlustur.UseVisualStyleBackColor = true;
+            this.btnDuyuruOlustur.Click += new System.EventHandler(this.btnDuyuruOlustur_Click);
             // 
             // rchDuyuru
             // 
@@ -150,7 +152,6 @@ namespace Proje_Hastane
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnGuncelle);
             this.groupBox3.Controls.Add(this.btnKaydet);
             this.groupBox3.Controls.Add(this.chkDurum);
             this.groupBox3.Controls.Add(this.mskTC);
@@ -171,15 +172,6 @@ namespace Proje_Hastane
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Randevu Paneli";
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.Location = new System.Drawing.Point(66, 351);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(168, 31);
-            this.btnGuncelle.TabIndex = 18;
-            this.btnGuncelle.Text = "Guncelle";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
             // 
             // btnKaydet
             // 
@@ -348,6 +340,7 @@ namespace Proje_Hastane
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.btnRandevuListe);
             this.groupBox6.Controls.Add(this.btnBransPanel);
             this.groupBox6.Controls.Add(this.btnDoktorPanel);
@@ -366,6 +359,7 @@ namespace Proje_Hastane
             this.btnRandevuListe.TabIndex = 4;
             this.btnRandevuListe.Text = "Randevu Listesi";
             this.btnRandevuListe.UseVisualStyleBackColor = true;
+            this.btnRandevuListe.Click += new System.EventHandler(this.btnRandevuListe_Click);
             // 
             // btnBransPanel
             // 
@@ -375,6 +369,7 @@ namespace Proje_Hastane
             this.btnBransPanel.TabIndex = 3;
             this.btnBransPanel.Text = "Brans Paneli";
             this.btnBransPanel.UseVisualStyleBackColor = true;
+            this.btnBransPanel.Click += new System.EventHandler(this.btnBransPanel_Click);
             // 
             // btnDoktorPanel
             // 
@@ -384,11 +379,23 @@ namespace Proje_Hastane
             this.btnDoktorPanel.TabIndex = 2;
             this.btnDoktorPanel.Text = "Doktor Paneli";
             this.btnDoktorPanel.UseVisualStyleBackColor = true;
+            this.btnDoktorPanel.Click += new System.EventHandler(this.btnDoktorPanel_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(21, 70);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 34);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Duyurular";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmSekreterDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(951, 552);
             this.Controls.Add(this.groupBox6);
@@ -398,9 +405,11 @@ namespace Proje_Hastane
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
             this.Name = "FrmSekreterDetay";
-            this.Text = "FrmSekreterDetay";
+            this.Text = "Sekreter Detay";
             this.Load += new System.EventHandler(this.FrmSekreterDetay_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -435,7 +444,6 @@ namespace Proje_Hastane
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.CheckBox chkDurum;
         private System.Windows.Forms.MaskedTextBox mskTC;
@@ -450,5 +458,6 @@ namespace Proje_Hastane
         private System.Windows.Forms.Button btnRandevuListe;
         private System.Windows.Forms.Button btnBransPanel;
         private System.Windows.Forms.Button btnDoktorPanel;
+        private System.Windows.Forms.Button button1;
     }
 }

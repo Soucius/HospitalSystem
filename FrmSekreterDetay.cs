@@ -88,5 +88,38 @@ namespace Proje_Hastane
 
             bgl.baglanti().Close();
         }
+
+        private void btnDuyuruOlustur_Click(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand("insert into tblDuyurular (duyuru) values (@d1)", bgl.baglanti());
+            komut.Parameters.AddWithValue("@d1", rchDuyuru.Text);
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            MessageBox.Show("Duyuru Olusturuldu");
+        }
+
+        private void btnDoktorPanel_Click(object sender, EventArgs e)
+        {
+            FrmDoktorPaneli drp = new FrmDoktorPaneli();
+            drp.Show();
+        }
+
+        private void btnBransPanel_Click(object sender, EventArgs e)
+        {
+            FrmBransPaneli frb = new FrmBransPaneli();
+            frb.Show();
+        }
+
+        private void btnRandevuListe_Click(object sender, EventArgs e)
+        {
+            FrmRandevuListesi frl = new FrmRandevuListesi();
+            frl.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmDuyurular fr = new FrmDuyurular();
+            fr.Show();
+        }
     }
 }
